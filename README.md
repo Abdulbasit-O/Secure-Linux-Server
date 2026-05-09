@@ -1,19 +1,65 @@
-# Secure Linux Server
+# Secure Linux Server on AWS EC2
 
-Its a secured new ubuntu sever,created on AWS EC2.
+Hardened Ubuntu server deployed on AWS EC2 with automated Linux security configuration using Bash scripting.
 
 ## Features
-- SSH locked down to key auth only
-- UFW firewall configured, with minimal open ports 
-- fail2ban watching for brute force attempts
-- Root access disabled, sudo user set up properly
+
+- SSH key authentication only
+- Root login disabled
+- Non-root sudo user configured
+- UFW firewall enabled
+- fail2ban brute-force protection
 - Automatic security updates enabled
 
-## Motivation
-Every project in this portfolio runs on infrastructure.
-This is the infrastructure built and secured from scratch,its the baseline of upcoming projects
-
 ## Stack
-AWS EC2 · Ubuntu · UFW · fail2ban · Bash
-## Status
-In progress
+
+- AWS EC2
+- Ubuntu Server
+- Bash
+- UFW
+- fail2ban
+
+## Architecture
+
+```text
+Internet
+   ↓
+AWS Security Group
+   ↓
+Ubuntu EC2
+ ├── SSH Hardening
+ ├── UFW Firewall
+ ├── fail2ban
+ └── Automatic Security Updates
+```
+
+## Automation
+
+Server hardening automated with:
+
+```bash
+scripts/secure_server.sh
+```
+
+Run:
+
+```bash
+chmod +x secure_server.sh
+./secure_server.sh
+```
+
+## Screenshots
+
+### UFW Status
+
+![UFW](screenshots/ufw-status.png)
+
+### fail2ban Status
+
+![fail2ban](screenshots/fail2ban-status.png)
+
+## Future Improvements
+
+- Terraform provisioning
+- Ansible automation
+- Monitoring integration
