@@ -1,6 +1,6 @@
 # Secure Linux Server
 
-Its built on AWS EC2. The goal is to take a new Ubuntu server and make sure its secured on the internet.
+Its a secured new ubuntu sever,created on AWS EC2.
 
 ## Features
 - SSH locked down to key auth only
